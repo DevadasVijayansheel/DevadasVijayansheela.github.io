@@ -1,34 +1,210 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Devadas Vijayan Sheela</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <title>Devadas Vijayan Sheela | Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      background: #0f172a;
-      color: #e5e7eb;
-      text-align: center;
-      padding: 80px 20px;
+    :root {
+      --bg: #0f172a;
+      --card: #111827;
+      --text: #e5e7eb;
+      --muted: #9ca3af;
+      --accent: #38bdf8;
     }
-    h1 { font-size: 42px; margin-bottom: 10px; }
-    p { font-size: 18px; color: #cbd5f5; }
-    a {
-      color: #38bdf8;
+
+    * {
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+    }
+
+    /* ---------- NAVBAR ---------- */
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: rgba(15, 23, 42, 0.9);
+      backdrop-filter: blur(10px);
+      padding: 15px 40px;
+      display: flex;
+      justify-content: space-between;
+      z-index: 1000;
+    }
+
+    nav a {
+      color: var(--muted);
+      margin-left: 20px;
       text-decoration: none;
-      font-weight: bold;
-      margin: 0 10px;
+      font-weight: 500;
+    }
+
+    nav a:hover {
+      color: var(--accent);
+    }
+
+    /* ---------- SECTIONS ---------- */
+    section {
+      padding: 100px 10%;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    h1 {
+      font-size: 48px;
+      margin-bottom: 10px;
+    }
+
+    h2 {
+      font-size: 32px;
+      margin-bottom: 30px;
+      color: var(--accent);
+    }
+
+    p {
+      color: var(--muted);
+      line-height: 1.7;
+    }
+
+    /* ---------- HERO ---------- */
+    #home {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    /* ---------- CARDS ---------- */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 25px;
+    }
+
+    .card {
+      background: var(--card);
+      padding: 25px;
+      border-radius: 15px;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+    }
+
+    /* ---------- BUTTON ---------- */
+    .btn {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 12px 24px;
+      background: var(--accent);
+      color: #000;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: 600;
+    }
+
+    /* ---------- FOOTER ---------- */
+    footer {
+      text-align: center;
+      padding: 40px;
+      color: var(--muted);
+    }
+
+    /* ---------- MOBILE ---------- */
+    @media (max-width: 768px) {
+      h1 { font-size: 36px; }
+      nav { padding: 15px 20px; }
     }
   </style>
 </head>
+
 <body>
+
+<!-- NAV -->
+<nav>
+  <strong>Devadas</strong>
+  <div>
+    <a href="#about">About</a>
+    <a href="#projects">Projects</a>
+    <a href="#skills">Skills</a>
+    <a href="#contact">Contact</a>
+  </div>
+</nav>
+
+<!-- HOME -->
+<section id="home">
   <h1>Devadas Vijayan Sheela</h1>
-  <p>Autonomous Systems • Robotics • ROS 2 • Isaac Sim</p>
+  <p>Robotics • Autonomous Driving • ROS 2 • Isaac Sim</p>
+  <a class="btn" href="#projects">View Projects</a>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <h2>About Me</h2>
   <p>
-    <a href="https://github.com/DevadasVijayansheel">GitHub</a>
-    <a href="https://linkedin.com">LinkedIn</a>
+    I am a Master’s student in Germany specializing in Autonomous Driving and Robotics.
+    My work focuses on ROS 2, Isaac Sim, Nav2, depth cameras (ZED), and simulation-driven
+    development for mobile robots and assistive systems.
   </p>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+  <h2>Projects</h2>
+  <div class="grid">
+    <div class="card">
+      <h3>ROS 2 Navigation (Nav2)</h3>
+      <p>Autonomous navigation using ZED depth camera with SLAM and Nav2 in Isaac Sim.</p>
+    </div>
+    <div class="card">
+      <h3>Isaac Sim Social Robot</h3>
+      <p>Custom differential-drive robot with ROS 2 bridge, TF, odometry and action graphs.</p>
+    </div>
+    <div class="card">
+      <h3>Perception with ZED</h3>
+      <p>Depth-to-laserscan, obstacle detection and mapping using stereo vision.</p>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+  <h2>Skills</h2>
+  <div class="grid">
+    <div class="card">ROS 2 (Humble)</div>
+    <div class="card">Isaac Sim</div>
+    <div class="card">Nav2 / SLAM</div>
+    <div class="card">Python / C++</div>
+    <div class="card">Computer Vision</div>
+    <div class="card">Linux / Git</div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <h2>Contact</h2>
+  <p>
+    <a class="btn" href="https://github.com/DevadasVijayansheel" target="_blank">GitHub</a>
+    <a class="btn" href="https://linkedin.com" target="_blank">LinkedIn</a>
+    <a class="btn" href="cv.pdf" download>Download CV</a>
+  </p>
+</section>
+
+<footer>
+  © 2025 Devadas Vijayan Sheela
+</footer>
+
 </body>
 </html>
