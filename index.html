@@ -132,35 +132,38 @@
 
     /* ---------- EXPERIENCE ---------- */
     .experience-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 30px;
-      margin-top: 40px;
-    }
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* force 4 in one line */
+  gap: 24px;
+  margin-top: 40px;
+  }
 
-    .experience-card {
-      background: #ffffff;
-      border-radius: 14px;
-      padding: 30px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      border: 1px solid var(--border);
-      box-shadow: 0 8px 20px rgba(0,0,0,0.06);
-      transition: transform 0.25s ease, box-shadow 0.25s ease;
-      cursor: pointer;
-    }
+
+  .experience-card {
+  background: #ffffff;
+  border-radius: 14px;
+  padding: 20px;
+  height: 120px;                 /* keeps them compact */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--border);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
 
     .experience-card:hover {
       transform: translateY(-6px);
       box-shadow: 0 14px 30px rgba(0,0,0,0.12);
     }
 
-    .experience-card img {
-      max-width: 140px;
-      max-height: 60px;
-      object-fit: contain;
-    }
+  .experience-card img {
+  max-width: 120px;
+  max-height: 50px;
+  object-fit: contain;
+}
+
 
     /* ---------- PROJECTS ---------- */
     .project {
@@ -238,9 +241,9 @@
   <section id="about">
     <h2>About Me</h2>
     <p>
-      Hello! I am Devadas, a Master’s student in Electromobility specializing in Artificial Intelligence, Autonomous Systems, and Sustainability. 
-      My academic background, project work, and current professional role focus on AI and robotics, ranging from autonomous navigation in mobile robots to manipulation tasks using reinforcement learning techniques integrated with simulation.
-     As a hobby, I maintain a small personal robotics lab at home equipped with a 3D printer, microcontrollers, and electronic hardware to build miniature robotic systems.
+     Hello! I am Devadas, a Master’s student in Electromobility specializing in Artificial Intelligence, Autonomous Systems, and Sustainability, and currently working part-time as a Robotics Research Assistant at the University of Technology Nuremberg (UTN).
+    My interests lie in AI-driven robotics, autonomous navigation, and robotic manipulation.
+      I enjoy working with both software and hardware, and as a hobby, I maintain a small personal robotics lab at home. I am always open to collaboration on robotics and AI projects.
     </p>
     <a href="cv.pdf" class="resume-btn" download>Resume</a>
   </section>
