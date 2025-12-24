@@ -1,210 +1,269 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>Devadas Vijayan Sheela | Portfolio</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <title>Devadas Vijayan Sheela | Robotics Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- Google Font -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <!-- Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 
   <style>
     :root {
-      --bg: #0f172a;
-      --card: #111827;
-      --text: #e5e7eb;
-      --muted: #9ca3af;
-      --accent: #38bdf8;
+      --bg: #ffffff;
+      --text: #0f172a;
+      --muted: #475569;
+      --accent: #2563eb;
+      --border: #e5e7eb;
     }
 
     * {
       box-sizing: border-box;
-      scroll-behavior: smooth;
     }
 
     body {
       margin: 0;
-      font-family: 'Poppins', sans-serif;
+      font-family: 'Inter', sans-serif;
       background: var(--bg);
       color: var(--text);
-    }
-
-    /* ---------- NAVBAR ---------- */
-    nav {
-      position: fixed;
-      top: 0;
-      width: 100%;
-      background: rgba(15, 23, 42, 0.9);
-      backdrop-filter: blur(10px);
-      padding: 15px 40px;
       display: flex;
-      justify-content: space-between;
-      z-index: 1000;
     }
 
-    nav a {
-      color: var(--muted);
-      margin-left: 20px;
-      text-decoration: none;
+    /* ---------- SIDEBAR ---------- */
+    .sidebar {
+      width: 320px;
+      min-height: 100vh;
+      padding: 40px 30px;
+      border-right: 1px solid var(--border);
+      position: fixed;
+      left: 0;
+      top: 0;
+      background: white;
+    }
+
+    .profile-pic {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 20px;
+    }
+
+    .sidebar h1 {
+      font-size: 24px;
+      margin-bottom: 6px;
+    }
+
+    .sidebar h3 {
+      font-size: 14px;
       font-weight: 500;
+      color: var(--muted);
+      margin-bottom: 20px;
     }
 
-    nav a:hover {
+    .sidebar p {
+      font-size: 14px;
+      line-height: 1.6;
+      color: var(--muted);
+      margin-bottom: 18px;
+    }
+
+    .sidebar a {
+      display: inline-block;
+      margin-right: 12px;
+      margin-top: 6px;
+      text-decoration: none;
       color: var(--accent);
+      font-weight: 600;
+      font-size: 14px;
     }
 
-    /* ---------- SECTIONS ---------- */
-    section {
-      padding: 100px 10%;
-      max-width: 1200px;
-      margin: auto;
-    }
-
-    h1 {
-      font-size: 48px;
-      margin-bottom: 10px;
+    /* ---------- CONTENT ---------- */
+    .content {
+      margin-left: 320px;
+      padding: 60px 80px;
+      width: calc(100% - 320px);
     }
 
     h2 {
       font-size: 32px;
-      margin-bottom: 30px;
-      color: var(--accent);
+      margin-bottom: 40px;
     }
 
-    p {
-      color: var(--muted);
-      line-height: 1.7;
-    }
-
-    /* ---------- HERO ---------- */
-    #home {
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-    }
-
-    /* ---------- CARDS ---------- */
-    .grid {
+    /* ---------- PROJECT ---------- */
+    .project {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 25px;
+      grid-template-columns: 1fr 1.3fr;
+      gap: 40px;
+      margin-bottom: 80px;
+      align-items: start;
     }
 
-    .card {
-      background: var(--card);
-      padding: 25px;
-      border-radius: 15px;
-      transition: transform 0.3s, box-shadow 0.3s;
+    .project img,
+    .project video {
+      width: 100%;
+      border-radius: 12px;
+      border: 1px solid var(--border);
     }
 
-    .card:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+    .project h3 {
+      margin-top: 0;
+      margin-bottom: 15px;
     }
 
-    /* ---------- BUTTON ---------- */
-    .btn {
-      display: inline-block;
-      margin-top: 20px;
-      padding: 12px 24px;
-      background: var(--accent);
-      color: #000;
-      text-decoration: none;
-      border-radius: 8px;
-      font-weight: 600;
+    .project ul {
+      padding-left: 20px;
+      color: var(--muted);
     }
 
-    /* ---------- FOOTER ---------- */
-    footer {
-      text-align: center;
-      padding: 40px;
+    .project li {
+      margin-bottom: 10px;
+      line-height: 1.6;
+    }
+
+    .tools {
+      margin-top: 10px;
+      font-size: 14px;
       color: var(--muted);
     }
 
     /* ---------- MOBILE ---------- */
-    @media (max-width: 768px) {
-      h1 { font-size: 36px; }
-      nav { padding: 15px 20px; }
+    @media (max-width: 900px) {
+      body {
+        flex-direction: column;
+      }
+
+      .sidebar {
+        position: relative;
+        width: 100%;
+        border-right: none;
+        border-bottom: 1px solid var(--border);
+      }
+
+      .content {
+        margin-left: 0;
+        width: 100%;
+        padding: 40px 25px;
+      }
+
+      .project {
+        grid-template-columns: 1fr;
+      }
     }
   </style>
 </head>
 
 <body>
 
-<!-- NAV -->
-<nav>
-  <strong>Devadas</strong>
-  <div>
-    <a href="#about">About</a>
-    <a href="#projects">Projects</a>
-    <a href="#skills">Skills</a>
-    <a href="#contact">Contact</a>
-  </div>
-</nav>
+<!-- ================= SIDEBAR ================= -->
+<aside class="sidebar">
+  <img src="profile.jpg" alt="Profile Photo" class="profile-pic">
 
-<!-- HOME -->
-<section id="home">
   <h1>Devadas Vijayan Sheela</h1>
-  <p>Robotics • Autonomous Driving • ROS 2 • Isaac Sim</p>
-  <a class="btn" href="#projects">View Projects</a>
-</section>
+  <h3>Robotics & Autonomous Systems Engineer</h3>
 
-<!-- ABOUT -->
-<section id="about">
-  <h2>About Me</h2>
   <p>
-    I am a Master’s student in Germany specializing in Autonomous Driving and Robotics.
-    My work focuses on ROS 2, Isaac Sim, Nav2, depth cameras (ZED), and simulation-driven
-    development for mobile robots and assistive systems.
+    Master’s student passionate about robotics and autonomous systems.
+    I enjoy turning CAD models into intelligent autonomous robots using
+    simulation and ROS 2–based system integration.
   </p>
-</section>
 
-<!-- PROJECTS -->
-<section id="projects">
+  <p>
+    <strong>Education</strong><br>
+    M.Sc. Electromobility (Autonomous Driving and Artificial Intelligence and Sustainability)<br>
+    FAU Erlangen–Nürnberg<br>
+    <em>Expected May 2026</em>
+  </p>
+
+  <p>
+    <strong>Focus Areas</strong><br>
+    Autonomous Navigation, Robotics Simulation, Perception with Depth Cameras,
+    Human-Centered Assistive Robots, Vision languange Action Models(VLA), Reinforcement Learning(RL). 
+  </p>
+
+  <a href="https://github.com/DevadasVijayansheel" target="_blank">GitHub</a>
+  <a href="https://linkedin.com/in/devadas-vijayan-sheela" target="_blank">LinkedIn</a>
+  <a href="cv.pdf" download>CV</a>
+</aside>
+
+<!-- ================= CONTENT ================= -->
+<main class="content">
+
   <h2>Projects</h2>
-  <div class="grid">
-    <div class="card">
-      <h3>ROS 2 Navigation (Nav2)</h3>
-      <p>Autonomous navigation using ZED depth camera with SLAM and Nav2 in Isaac Sim.</p>
-    </div>
-    <div class="card">
-      <h3>Isaac Sim Social Robot</h3>
-      <p>Custom differential-drive robot with ROS 2 bridge, TF, odometry and action graphs.</p>
-    </div>
-    <div class="card">
-      <h3>Perception with ZED</h3>
-      <p>Depth-to-laserscan, obstacle detection and mapping using stereo vision.</p>
-    </div>
-  </div>
-</section>
 
-<!-- SKILLS -->
-<section id="skills">
-  <h2>Skills</h2>
-  <div class="grid">
-    <div class="card">ROS 2 (Humble)</div>
-    <div class="card">Isaac Sim</div>
-    <div class="card">Nav2 / SLAM</div>
-    <div class="card">Python / C++</div>
-    <div class="card">Computer Vision</div>
-    <div class="card">Linux / Git</div>
-  </div>
-</section>
+  <!-- PROJECT 1 -->
+  <section class="project">
+    <img src="projects/isaac_sim_nav.gif" alt="Isaac Sim Assistive Robot">
 
-<!-- CONTACT -->
-<section id="contact">
-  <h2>Contact</h2>
-  <p>
-    <a class="btn" href="https://github.com/DevadasVijayansheel" target="_blank">GitHub</a>
-    <a class="btn" href="https://linkedin.com" target="_blank">LinkedIn</a>
-    <a class="btn" href="cv.pdf" download>Download CV</a>
-  </p>
-</section>
+    <div>
+      <h3>Assistive Robot Simulation & Autonomous Navigation</h3>
+      <ul>
+        <li>Developed URDF files from CAD models (Fusion 360) for simulation in NVIDIA Isaac Sim.</li>
+        <li>Integrated ZED 2i stereo depth camera for real-time 3D perception and RViz visualization.</li>
+        <li>Connected the robot with ROS 2 and implemented depth-based navigation using the Nav2 stack.</li>
+        <li>Focused on human-centered assistive robot behavior in complex indoor environments.</li>
+      </ul>
+      <div class="tools">
+        <strong>Tools:</strong> Isaac Sim, ROS 2, ZED 2i, Nav2, RViz, Fusion 360
+      </div>
+    </div>
+  </section>
 
-<footer>
-  © 2025 Devadas Vijayan Sheela
-</footer>
+  <!-- PROJECT 2 -->
+  <section class="project">
+    <img src="projects/hardware_robot.gif" alt="Hardware Prototyping Robot">
+
+    <div>
+      <h3>Hardware Prototyping for Robotics & AI Integration</h3>
+      <ul>
+        <li>Built a line-following robot using Arduino, IR sensors, and PID-based motor control.</li>
+        <li>Converted a toy car into an autonomous platform using ESP32 and TB6612 motor driver.</li>
+        <li>Mounted Jetson Nano with ZED Mini for stereo-vision-based edge AI experiments.</li>
+        <li>Designed, soldered, and debugged custom PCB circuits and embedded electronics.</li>
+      </ul>
+      <div class="tools">
+        <strong>Tools:</strong> Arduino, ESP32, Jetson Nano, ZED Mini, 3D Printing, PCB Design
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECT 3 -->
+  <section class="project">
+    <img src="projects/jetbot_nav.gif" alt="JetBot Navigation">
+
+    <div>
+      <h3>JetBot Autonomous Navigation System</h3>
+      <ul>
+        <li>Deployed ROS 2 and Nav2 on NVIDIA JetBot for autonomous navigation and path following.</li>
+        <li>Configured SSH-based remote access for robot control and debugging.</li>
+        <li>Executed teleoperation using keyboard and joystick in real and simulated environments.</li>
+        <li>Built a Gazebo-based digital twin synchronized with real hardware.</li>
+      </ul>
+      <div class="tools">
+        <strong>Tools:</strong> ROS 2, Nav2, JetBot, Gazebo, SSH
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECT 4 -->
+  <section class="project">
+    <img src="projects/ml_projects.png" alt="Machine Learning Projects">
+
+    <div>
+      <h3>Machine Learning & Deep Learning Projects</h3>
+      <ul>
+        <li>Implemented 10+ ML/DL projects including regression and classification algorithms.</li>
+        <li>Trained and evaluated models on Iris and MNIST datasets.</li>
+        <li>Analyzed performance using accuracy, precision, recall, and confusion matrices.</li>
+        <li>Explored feature scaling, regularization, and overfitting prevention techniques.</li>
+      </ul>
+      <div class="tools">
+        <strong>Tools:</strong> Python, scikit-learn, pandas, matplotlib, Jupyter
+      </div>
+    </div>
+  </section>
+
+</main>
 
 </body>
 </html>
