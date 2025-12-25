@@ -244,13 +244,15 @@ background-repeat: no-repeat;
   max-width: 1000px;
 }
 
-/* Each lab card */
-.lab-item {
+
+
+ .lab-item {
   background: #ffffff;
   border: 1px solid #e5e7eb;
-  border-radius: 14px;
-  padding: 18px;
+  border-radius: 12px;
+  padding: 14px;          /* 🔽 tighter */
 }
+     
 
 /* Title ABOVE the GIF */
 .lab-item h4 {
@@ -260,15 +262,17 @@ background-repeat: no-repeat;
   text-align: center;
 }
 
-/* GIF / Image */
-.lab-item img {
+
+
+ .lab-item img {
   width: 100%;
-  height: 190px;          /* 👈 controls size */
+  height: 140px;          /* 🔽 reduced height */
   object-fit: cover;
-  border-radius: 10px;
-  margin-bottom: 14px;
+  border-radius: 8px;
+  margin-bottom: 10px;
   background: #000;
 }
+     
 
 /* Bullet text BELOW the GIF */
 .lab-item ul {
