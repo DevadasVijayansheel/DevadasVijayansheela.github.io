@@ -187,28 +187,35 @@ background-repeat: no-repeat;
   gap: 12px;
 }
 
-.project-media img {
-  width: 100%;
-  border-radius: 10px;
-  border: 1px solid #e5e7eb;
+/* Stack multiple GIFs vertically */
+.project-media {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
 }
 
+/* Unified image sizing for ALL project images */
+.project img,
+.project-media img {
+  width: 100%;
+  height: 260px;          /* uniform height */
+  object-fit: cover;     /* crop without distortion */
+  border-radius: 10px;
+  border: 1px solid #e5e7eb;
+  background-color: #000;
+}
 
-    .project img {
-      width: 100%;
-      border-radius: 10px;
-      border: 1px solid var(--border);
-    }
+/* Project text formatting */
+.project ul {
+  padding-left: 18px;
+  color: var(--muted-dark);
+}
 
-    .project ul {
-      padding-left: 18px;
-      color: var(--muted-dark);
-    }
+.project li {
+  margin-bottom: 10px;
+  line-height: 1.6;
+}
 
-    .project li {
-      margin-bottom: 10px;
-      line-height: 1.6;
-    }
 
     /* ---------- MOBILE ---------- */
     @media (max-width: 900px) {
