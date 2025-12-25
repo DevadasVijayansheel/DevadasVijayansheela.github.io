@@ -56,39 +56,13 @@
       border: 2px solid rgba(255,255,255,0.2);
     }
 
-    .sidebar h1 {
-      font-size: 22px;
-      margin-bottom: 6px;
-    }
+    .sidebar h1 { font-size: 22px; margin-bottom: 6px; }
+    .sidebar h3 { font-size: 14px; font-weight: 400; color: var(--muted-light); margin-bottom: 20px; }
+    .sidebar .edu { font-size: 13px; color: var(--muted-light); line-height: 1.6; }
 
-    .sidebar h3 {
-      font-size: 14px;
-      font-weight: 400;
-      color: var(--muted-light);
-      margin-bottom: 20px;
-    }
-
-    .sidebar .edu {
-      font-size: 13px;
-      color: var(--muted-light);
-      line-height: 1.6;
-    }
-
-    .socials {
-      margin-top: auto;
-      padding-top: 30px;
-    }
-
-    .socials a {
-      color: var(--muted-light);
-      text-decoration: none;
-      margin: 0 10px;
-      font-size: 14px;
-    }
-
-    .socials a:hover {
-      color: white;
-    }
+    .socials { margin-top: auto; padding-top: 30px; }
+    .socials a { color: var(--muted-light); text-decoration: none; margin: 0 10px; font-size: 14px; }
+    .socials a:hover { color: white; }
 
     /* ---------- RIGHT CONTENT ---------- */
     .content {
@@ -98,18 +72,8 @@
       width: calc(100% - 320px);
     }
 
-    h2 {
-      font-size: 32px;
-      margin-bottom: 25px;
-      color: var(--text-dark);
-    }
-
-    p {
-      font-size: 16px;
-      line-height: 1.8;
-      color: var(--muted-dark);
-      max-width: 750px;
-    }
+    h2 { font-size: 32px; margin-bottom: 25px; color: var(--text-dark); }
+    p { font-size: 16px; line-height: 1.8; color: var(--muted-dark); max-width: 750px; }
 
     .resume-btn {
       display: inline-block;
@@ -123,16 +87,8 @@
       background: #f8fafc;
     }
 
-    .resume-btn:hover {
-      border-color: var(--accent);
-      color: var(--accent);
-    }
-
-    hr {
-      margin: 70px 0;
-      border: none;
-      border-top: 1px solid var(--border);
-    }
+    .resume-btn:hover { border-color: var(--accent); color: var(--accent); }
+    hr { margin: 70px 0; border: none; border-top: 1px solid var(--border); }
 
     /* ---------- EXPERIENCE ---------- */
     .experience-grid {
@@ -155,24 +111,25 @@
       transition: transform 0.25s ease, box-shadow 0.25s ease;
     }
 
-    .experience-card:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 14px 30px rgba(0,0,0,0.12);
-    }
+    .experience-card:hover { transform: translateY(-6px); box-shadow: 0 14px 30px rgba(0,0,0,0.12); }
+    .experience-card img { max-width: 120px; max-height: 50px; object-fit: contain; }
 
-    .experience-card img {
-      max-width: 120px;
-      max-height: 50px;
-      object-fit: contain;
-    }
-
-    /* ---------- PROJECTS ---------- */
+    /* ---------- ALTERNATING PROJECTS LAYOUT ---------- */
     .project {
       display: grid;
-      grid-template-columns: 1fr 1.2fr;
-      gap: 40px;
-      margin-bottom: 70px;
-      align-items: start;
+      grid-template-columns: 1fr 1fr; /* Equal split for balance */
+      gap: 50px;
+      margin-bottom: 100px;
+      align-items: center;
+    }
+
+    /* Flip every second project (Image right, Text left) */
+    .project:nth-of-type(even) .project-media,
+    .project:nth-of-type(even) > img {
+      order: 2;
+    }
+    .project:nth-of-type(even) .project-content {
+      order: 1;
     }
 
     .project-media {
@@ -184,94 +141,56 @@
     .project img,
     .project-media img {
       width: 100%;
-      height: 260px;
+      height: 280px; /* Kept standard project size */
       object-fit: cover;
-      border-radius: 10px;
+      border-radius: 12px;
       border: 1px solid #e5e7eb;
       background-color: #000;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
     }
 
-    .project ul {
-      padding-left: 18px;
-      color: var(--muted-dark);
-    }
+    .project-content h3 { margin-top: 0; color: var(--text-dark); }
+    .project-content ul { padding-left: 18px; color: var(--muted-dark); }
+    .project-content li { margin-bottom: 10px; line-height: 1.6; }
 
-    .project li {
-      margin-bottom: 10px;
-      line-height: 1.6;
-    }
-
-    /* ---------- HOME ROBOTICS LAB (NEW SIDE-BY-SIDE) ---------- */
+    /* ---------- HOME ROBOTICS LAB (SIDE-BY-SIDE) ---------- */
     .lab-grid {
       display: grid;
-      grid-template-columns: 1fr 1fr; /* Two columns side by side */
+      grid-template-columns: 1fr 1fr;
       gap: 24px;
       margin-top: 30px;
     }
 
     .lab-item {
-      background: #ffffff;
+      background: #f8fafc;
       border: 1px solid #e5e7eb;
       border-radius: 12px;
-      padding: 16px;
-      display: flex;
-      flex-direction: column;
+      padding: 20px;
     }
 
-    .lab-item h4 {
-      margin: 0 0 12px;
-      font-size: 17px;
-      color: #0f172a;
-    }
+    .lab-item h4 { margin: 0 0 12px; font-size: 17px; text-align: center; }
 
     .lab-item img {
       width: 100%;
-      height: 180px; /* Reduced specific size for this section */
+      height: 160px; /* Reduced size for lab section */
       object-fit: cover;
       border-radius: 8px;
       margin-bottom: 15px;
-      background: #000;
     }
 
-    .lab-item ul {
-      padding-left: 18px;
-      margin: 0;
-      font-size: 14px;
-      color: #475569;
-    }
-
-    .lab-item li {
-      margin-bottom: 6px;
-      line-height: 1.4;
-    }
+    .lab-item ul { padding-left: 18px; font-size: 14px; color: var(--muted-dark); }
 
     /* ---------- MOBILE ---------- */
     @media (max-width: 900px) {
       body { flex-direction: column; }
-
-      .sidebar {
-        position: relative;
-        width: 100%;
-        height: auto;
-      }
-
-      .content {
-        margin-left: 0;
-        width: 100%;
-        padding: 50px 30px;
-      }
-
-      .experience-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
-      .lab-grid {
-        grid-template-columns: 1fr; /* Stack on mobile */
-      }
-
-      .project {
-        grid-template-columns: 1fr;
-      }
+      .sidebar { position: relative; width: 100%; height: auto; }
+      .content { margin-left: 0; width: 100%; padding: 40px 20px; }
+      .experience-grid { grid-template-columns: repeat(2, 1fr); }
+      .project { grid-template-columns: 1fr; gap: 20px; }
+      .project:nth-of-type(even) .project-media,
+      .project:nth-of-type(even) > img { order: 1; }
+      .project:nth-of-type(even) .project-content { order: 2; }
+      .lab-grid { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -279,18 +198,14 @@
 <body>
 
 <aside class="sidebar">
-  <img src="profile1.jpg" class="profile-pic" alt="Profile Picture">
-
+  <img src="profile1.jpg" class="profile-pic" alt="Devadas">
   <h1>Devadas Vijayan Sheela</h1>
   <h3>Robotics & Autonomous Systems Engineer</h3>
-
   <div class="edu">
     M.Sc. Electromobility<br>
-    FAU Erlangen–Nürnberg<br>
-    Germany<br>
+    FAU Erlangen–Nürnberg, Germany<br>
     Expected May 2026
   </div>
-
   <div class="socials">
     <a href="https://github.com/DevadasVijayansheel" target="_blank">GitHub</a>
     <a href="https://www.linkedin.com/in/vijayan-sheela" target="_blank">LinkedIn</a>
@@ -302,9 +217,8 @@
   <section id="about">
     <h2>About Me</h2>
     <p>
-      Hello! I am Devadas, a Master’s student in Electromobility specializing in Artificial Intelligence, Autonomous Systems, and Sustainability, and currently working part-time as a Robotics Research Assistant at the University of Technology Nuremberg (UTN).
-      My interests lie in AI-driven robotics, autonomous navigation, and robotic manipulation.
-      I enjoy working with both software and hardware, and as a hobby, I maintain a small personal robotics lab at home. I am always open to collaboration on robotics and AI projects.
+      Hello! I am Devadas, a Master’s student in Electromobility specializing in AI, Autonomous Systems, and Sustainability. 
+      I am currently a Robotics Research Assistant at UTN, focusing on AI-driven navigation and manipulation.
     </p>
     <a href="cv.pdf" class="resume-btn" download>Resume</a>
   </section>
@@ -314,18 +228,10 @@
   <section id="experience">
     <h2>Experience</h2>
     <div class="experience-grid">
-      <a href="https://www.utn.de/en/" target="_blank" class="experience-card">
-        <img src="experience/utn.png" alt="UTN">
-      </a>
-      <a href="https://www.fraunhofer.de/en.html" target="_blank" class="experience-card">
-        <img src="experience/fraunhofer.png" alt="Fraunhofer">
-      </a>
-      <a href="https://www.faps.fau.de/" target="_blank" class="experience-card">
-        <img src="experience/faps.png" alt="FAPS FAU">
-      </a>
-      <a href="https://www.fau.eu/" target="_blank" class="experience-card">
-        <img src="experience/fau.png" alt="FAU">
-      </a>
+      <div class="experience-card"><img src="experience/utn.png" alt="UTN"></div>
+      <div class="experience-card"><img src="experience/fraunhofer.png" alt="Fraunhofer"></div>
+      <div class="experience-card"><img src="experience/faps.png" alt="FAPS FAU"></div>
+      <div class="experience-card"><img src="experience/fau.png" alt="FAU"></div>
     </div>
   </section>
 
@@ -335,10 +241,10 @@
     <h2>Projects</h2>
 
     <div class="project">
-      <img src="project/isaac_sim_nav1.gif" alt="Navigation Sim">
-      <div>
-        <h3>Assistive Robot Simulation & Autonomous Navigation</h3>
-        <p><strong>ROS2 · ZED 2i depth camera · Isaac Sim · Nav2 Stack</strong></p>
+      <img src="project/isaac_sim_nav1.gif" alt="Navigation">
+      <div class="project-content">
+        <h3>Assistive Robot Simulation & Navigation</h3>
+        <p><strong>ROS2 · Isaac Sim · Nav2 Stack</strong></p>
         <ul>
           <li>Developed URDF files from CAD models for NVIDIA Isaac Sim.</li>
           <li>Integrated ZED 2i depth camera and ROS 2 Nav2.</li>
@@ -349,56 +255,55 @@
 
     <div class="project">
       <img src="project/bin_picking.gif" alt="3D Bin Picking">
-      <div>
-        <h3>Benchmarking 3D Bin-Picking Algorithms with Franka Emika</h3>
-        <p><strong>MuJoCo · Franka Emika · Optimization · Robotics Evaluation</strong></p>
+      <div class="project-content">
+        <h3>Benchmarking 3D Bin-Picking</h3>
+        <p><strong>MuJoCo · Franka Emika · Robotics Evaluation</strong></p>
         <ul>
-          <li>Benchmarked and evaluated 3D bin-picking algorithms in simulation using MuJoCo.</li>
-          <li>Conducted structured evaluation experiments with the Franka Emika robot.</li>
-          <li>Analyzed grasp success rate, robustness, and performance metrics.</li>
+          <li>Benchmarked 3D bin-picking algorithms in MuJoCo.</li>
+          <li>Conducted structured experiments with the Franka Emika robot.</li>
+          <li>Analyzed grasp success rate and performance metrics.</li>
         </ul>
       </div>
     </div>
 
     <div class="project">
-      <img src="project/masterthesis.gif" alt="Assistive Object Picking">
-      <div>
-        <h3>Assistive Robot Object Picking in Simulation (Ongoing)</h3>
-        <p><strong>Isaac Sim · Isaac Lab · ROS 2 · Teleoperation · VLA · RL</strong></p>
+      <img src="project/masterthesis.gif" alt="Object Picking">
+      <div class="project-content">
+        <h3>Assistive Robot Object Picking (Ongoing)</h3>
+        <p><strong>Isaac Lab · ROS 2 · VLA · RL</strong></p>
         <ul>
-          <li>Developed an assistive mobile manipulator in NVIDIA Isaac Sim and Isaac Lab.</li>
-          <li>Performed teleoperation experiments to validate manipulation and perception pipelines.</li>
-          <li><strong>Ongoing goal:</strong> Integrate Vision–Language–Action (VLA) models with autonomous navigation.</li>
-          <li>Study sim-to-real transfer using ROS 2 teleoperation experiments on real hardware.</li>
+          <li>Developing an assistive mobile manipulator in NVIDIA Isaac Lab.</li>
+          <li>Integrating Vision–Language–Action (VLA) models.</li>
+          <li>Studying sim-to-real transfer via teleoperation experiments.</li>
         </ul>
       </div>
     </div>
 
     <div class="project">
-      <img src="project/drone.gif" alt="Autonomous Drone Detection">
-      <div>
-        <h3>Autonomous Drone Flight with Real-Time Object Detection</h3>
-        <p><strong>YOLOv3 · Intel RealSense · Windows · OpenCV</strong></p>
+      <img src="project/drone.gif" alt="Drone Detection">
+      <div class="project-content">
+        <h3>Autonomous Drone Real-Time Detection</h3>
+        <p><strong>YOLOv3 · Intel RealSense · OpenCV</strong></p>
         <ul>
-          <li>Implemented a YOLOv3-based object detection pipeline for autonomous drones.</li>
-          <li>Used depth data from Intel RealSense for spatial validation.</li>
-          <li>Validated performance using ROS bag testing and real-time flight experiments.</li>
+          <li>Implemented YOLOv3-based detection for autonomous flight.</li>
+          <li>Utilized depth data from Intel RealSense for spatial validation.</li>
+          <li>Validated performance through real-time flight experiments.</li>
         </ul>
       </div>
     </div>
 
     <div class="project">
       <div class="project-media">
-        <img src="project/grocessry_items.gif" alt="Grocery Items Segmentation">
-        <img src="project/object_picking.gif" alt="Object Picking Segmentation">
+        <img src="project/grocessry_items.gif" alt="Segmentation 1">
+        <img src="project/object_picking.gif" alt="Segmentation 2">
       </div>
-      <div>
-        <h3>Interactive Image Segmentation for Robotic Grasping</h3>
-        <p><strong>SAM-2 · Hugging Face · Computer Vision · Human-in-the-Loop</strong></p>
+      <div class="project-content">
+        <h3>Interactive Image Segmentation (SAM-2)</h3>
+        <p><strong>SAM-2 · Hugging Face · Human-in-the-Loop</strong></p>
         <ul>
-          <li>Implemented an interactive, click-based image segmentation pipeline using SAM-2 from Hugging Face for FRANKA.</li>
-          <li>Enabled human-in-the-loop object selection to generate high-quality binary masks suitable for robotic grasping.</li>
-          <li>Demonstrated segmentation on multiple grocery items and object-specific grasping scenarios.</li>
+          <li>Interactive, click-based segmentation pipeline for FRANKA.</li>
+          <li>Enabled human-in-the-loop object selection for grasping.</li>
+          <li>Demonstrated on various grocery and specific object scenarios.</li>
         </ul>
       </div>
     </div>
@@ -408,24 +313,22 @@
 
   <section id="home-lab">
     <h2>Home Robotics Lab & Prototyping</h2>
-
     <div class="lab-grid">
       <div class="lab-item">
-        <h4>3D-Printed Mobile Robot Platform</h4>
-        <img src="lab/home_lab.gif" alt="3D Printed Mobile Robot">
+        <h4>3D-Printed Mobile Platform</h4>
+        <img src="lab/home_lab.gif" alt="Mobile Robot">
         <ul>
-          <li>Custom chassis design and 3D printing</li>
-          <li>ESP32-based motor control</li>
-          <li>ROS 2 <code>/cmd_vel</code> integration</li>
+          <li>Custom chassis & 3D printing</li>
+          <li>ESP32 motor control</li>
+          <li>ROS 2 Integration</li>
         </ul>
       </div>
-
       <div class="lab-item">
-        <h4>Embedded Electronics & Soldering</h4>
-        <img src="lab/me.gif" alt="Embedded Electronics">
+        <h4>Embedded Electronics</h4>
+        <img src="lab/me.gif" alt="Electronics">
         <ul>
-          <li>Motor driver wiring and power regulation</li>
-          <li>Manual soldering and debugging</li>
+          <li>Motor driver wiring & regulation</li>
+          <li>Manual soldering & debugging</li>
           <li>Sensor integration</li>
         </ul>
       </div>
