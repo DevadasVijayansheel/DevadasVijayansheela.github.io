@@ -235,35 +235,37 @@ background-repeat: no-repeat;
 /* ===== HOME ROBOTICS LAB SECTION ===== */
 .lab-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 40px;
+  grid-template-columns: repeat(2, 1fr); /* left / right */
+  gap: 32px;
   margin-top: 40px;
+  max-width: 900px;
+}
+
+.lab-item {
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 14px;
+  padding: 18px;
 }
 
 .lab-item img {
   width: 100%;
-  border-radius: 12px;
-  border: 1px solid #e5e7eb;
+  height: 200px;           /* 👈 controls GIF size */
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 14px;
 }
 
 .lab-item h4 {
-  margin: 14px 0 6px;
-  font-size: 18px;
+  margin: 6px 0 6px;
+  font-size: 17px;
   color: #0f172a;
 }
 
 .lab-item p {
-  font-size: 15px;
+  font-size: 14.5px;
   color: #475569;
   line-height: 1.6;
-}
-/* Alternating left-right layout */
-.lab-item {
-  max-width: 520px;
-}
-
-.lab-item:nth-child(even) {
-  margin-left: auto; /* push to the right */
 }
 
 /* Mobile */
@@ -272,6 +274,7 @@ background-repeat: no-repeat;
     grid-template-columns: 1fr;
   }
 }
+
 
       .project {
         grid-template-columns: 1fr;
