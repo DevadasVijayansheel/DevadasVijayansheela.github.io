@@ -225,6 +225,38 @@ background-repeat: no-repeat;
         width: 100%;
         padding: 50px 30px;
       }
+/* ===== HOME ROBOTICS LAB SECTION ===== */
+.lab-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 40px;
+  margin-top: 40px;
+}
+
+.lab-item img {
+  width: 100%;
+  border-radius: 12px;
+  border: 1px solid #e5e7eb;
+}
+
+.lab-item h4 {
+  margin: 14px 0 6px;
+  font-size: 18px;
+  color: #0f172a;
+}
+
+.lab-item p {
+  font-size: 15px;
+  color: #475569;
+  line-height: 1.6;
+}
+
+/* Mobile */
+@media (max-width: 900px) {
+  .lab-grid {
+    grid-template-columns: 1fr;
+  }
+}
 
       .project {
         grid-template-columns: 1fr;
@@ -387,6 +419,66 @@ background-repeat: no-repeat;
 </div>
 
 
+<!-- HOME ROBOTICS LAB -->
+<section id="home-lab">
+  <h2>Home Robotics Lab & Prototyping</h2>
+
+  <p>
+    A personal experimental robotics lab where I design, build, and test miniature robotic
+    systems by combining 3D printing, embedded electronics, and AI-enabled hardware.
+  </p>
+
+  <p>
+    My work here focuses on rapid iteration from concept → prototype → working robot,
+    bridging simulation, embedded systems, and real-world experimentation.
+  </p>
+
+  <h3 style="margin-top:40px;">🔧 Featured Experiments</h3>
+
+  <div class="lab-grid">
+
+    <!-- ITEM 1 -->
+    <div class="lab-item">
+      <img src="lab/mobile_robot.gif" alt="3D Printed Mobile Robot">
+      <h4>3D-Printed Mobile Robot Platform</h4>
+      <p>
+        Custom chassis design and 3D printing. ESP32-based motor control integrated
+        with ROS 2 using a <code>/cmd_vel</code> interface for differential drive motion.
+      </p>
+    </div>
+
+    <!-- ITEM 2 -->
+    <div class="lab-item">
+      <img src="lab/soldering.jpg" alt="Embedded Electronics and Soldering">
+      <h4>Embedded Electronics & Soldering</h4>
+      <p>
+        Motor driver wiring, voltage regulation, sensor integration, and manual
+        soldering. Hands-on PCB prototyping and hardware debugging.
+      </p>
+    </div>
+
+    <!-- ITEM 3 -->
+    <div class="lab-item">
+      <img src="lab/zed_jetson.gif" alt="Jetson ZED Mini Vision Setup">
+      <h4>Jetson + ZED Mini Vision Setup</h4>
+      <p>
+        Stereo camera mounting and calibration. Real-time depth perception and
+        computer vision experiments on NVIDIA Jetson edge hardware.
+      </p>
+    </div>
+
+    <!-- ITEM 4 -->
+    <div class="lab-item">
+      <img src="lab/robotic_arm.gif" alt="3D Printed Robotic Arm">
+      <h4>3D-Printed Robotic Arm (Prototype)</h4>
+      <p>
+        Mechanical design and printing of arm components, actuator mounting,
+        and early-stage manipulation experiments.
+      </p>
+    </div>
+
+  </div>
+</section>
 
     
   </section>
