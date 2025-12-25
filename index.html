@@ -250,6 +250,14 @@ background-repeat: no-repeat;
   color: #475569;
   line-height: 1.6;
 }
+/* Alternating left-right layout */
+.lab-item {
+  max-width: 520px;
+}
+
+.lab-item:nth-child(even) {
+  margin-left: auto; /* push to the right */
+}
 
 /* Mobile */
 @media (max-width: 900px) {
