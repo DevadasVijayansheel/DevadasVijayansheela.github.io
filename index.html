@@ -232,15 +232,19 @@ background-repeat: no-repeat;
         width: 100%;
         padding: 50px 30px;
       }
-/* ===== HOME ROBOTICS LAB SECTION ===== */
+/* ===============================
+   HOME ROBOTICS LAB SECTION
+   =============================== */
+
 .lab-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr); /* left / right */
+  grid-template-columns: repeat(2, 1fr); /* LEFT | RIGHT */
   gap: 32px;
   margin-top: 40px;
-  max-width: 900px;
+  max-width: 1000px;
 }
 
+/* Each lab card */
 .lab-item {
   background: #ffffff;
   border: 1px solid #e5e7eb;
@@ -248,27 +252,38 @@ background-repeat: no-repeat;
   padding: 18px;
 }
 
+/* Title ABOVE the GIF */
+.lab-item h4 {
+  margin: 0 0 12px;
+  font-size: 17px;
+  color: #0f172a;
+  text-align: center;
+}
+
+/* GIF / Image */
 .lab-item img {
   width: 100%;
-  height: 200px;           /* 👈 controls GIF size */
+  height: 190px;          /* 👈 controls size */
   object-fit: cover;
   border-radius: 10px;
   margin-bottom: 14px;
+  background: #000;
 }
 
-.lab-item h4 {
-  margin: 6px 0 6px;
-  font-size: 17px;
-  color: #0f172a;
-}
-
-.lab-item p {
+/* Bullet text BELOW the GIF */
+.lab-item ul {
+  padding-left: 18px;
+  margin: 0;
   font-size: 14.5px;
   color: #475569;
-  line-height: 1.6;
 }
 
-/* Mobile */
+.lab-item li {
+  margin-bottom: 8px;
+  line-height: 1.5;
+}
+
+/* Mobile fallback */
 @media (max-width: 900px) {
   .lab-grid {
     grid-template-columns: 1fr;
@@ -441,40 +456,55 @@ background-repeat: no-repeat;
 <section id="home-lab">
   <h2>Home Robotics Lab & Prototyping</h2>
 
-  <p>
-    A personal experimental robotics lab where I design, build, and test miniature robotic
-    systems by combining 3D printing, embedded electronics, and AI-enabled hardware.
-  </p>
-
-  
-
-  <h3 style="margin-top:40px;"> Experiments</h3>
-
   <div class="lab-grid">
 
     <!-- ITEM 1 -->
     <div class="lab-item">
-      <img src="lab/home_lab.gif" alt="3D Printed Mobile Robot">
       <h4>3D-Printed Mobile Robot Platform</h4>
-      <p>
-        Custom chassis design and 3D printing. ESP32-based motor control integrated
-        with ROS 2 using a <code>/cmd_vel</code> interface for differential drive motion.
-      </p>
+      <img src="lab/home_lab.gif" alt="3D Printed Mobile Robot">
+
+      <ul>
+        <li>Custom chassis design and 3D printing</li>
+        <li>ESP32-based motor control</li>
+        <li>ROS 2 <code>/cmd_vel</code> integration</li>
+      </ul>
     </div>
 
-  
+    <!-- ITEM 2 -->
+    <div class="lab-item">
+      <h4>Embedded Electronics & Soldering</h4>
+      <img src="lab/me.gif" alt="Embedded Electronics">
+
+      <ul>
+        <li>Motor driver wiring and power regulation</li>
+        <li>Manual soldering and debugging</li>
+        <li>Sensor integration</li>
+      </ul>
+    </div>
 
     <!-- ITEM 3 -->
     <div class="lab-item">
-      <img src="lab/me.gif" alt="Jetson ZED Mini Vision Setup">
       <h4>Jetson + ZED Mini Vision Setup</h4>
-      <p>
-        Stereo camera mounting and calibration. Real-time depth perception and
-        computer vision experiments on NVIDIA Jetson edge hardware.
-      </p>
+      <img src="lab/zed_jetson.gif" alt="Jetson ZED Vision">
+
+      <ul>
+        <li>Stereo camera mounting and calibration</li>
+        <li>Real-time depth perception</li>
+        <li>Edge-AI experiments on Jetson</li>
+      </ul>
     </div>
 
-   
+    <!-- ITEM 4 -->
+    <div class="lab-item">
+      <h4>3D-Printed Robotic Arm (Prototype)</h4>
+      <img src="lab/robotic_arm.gif" alt="Robotic Arm">
+
+      <ul>
+        <li>Mechanical design and 3D printing</li>
+        <li>Actuator mounting</li>
+        <li>Basic manipulation experiments</li>
+      </ul>
+    </div>
 
   </div>
 </section>
