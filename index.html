@@ -45,7 +45,6 @@
       flex-direction: column;
       align-items: center;
       text-align: center;
-      z-index: 10;
     }
 
     .profile-pic {
@@ -73,8 +72,8 @@
       width: calc(100% - 320px);
     }
 
-    h2 { font-size: 32px; margin-bottom: 40px; color: var(--text-dark); }
-    p { font-size: 16px; line-height: 1.8; color: var(--muted-dark); }
+    h2 { font-size: 32px; margin-bottom: 25px; color: var(--text-dark); }
+    p { font-size: 16px; line-height: 1.8; color: var(--muted-dark); max-width: 750px; }
 
     .resume-btn {
       display: inline-block;
@@ -88,45 +87,8 @@
       background: #f8fafc;
     }
 
+    .resume-btn:hover { border-color: var(--accent); color: var(--accent); }
     hr { margin: 70px 0; border: none; border-top: 1px solid var(--border); }
-
-    /* ---------- PROJECTS GRID (NO BOXES) ---------- */
-    .project-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 60px 40px; /* Vertical space 60px, Horizontal 40px */
-    }
-
-    .project-item {
-      display: flex;
-      flex-direction: column;
-    }
-
-    .project-item h3 {
-      font-size: 20px;
-      margin: 15px 0 10px 0;
-      color: var(--text-dark);
-    }
-
-    /* Original GIF Sizing from first prompt */
-    .project-item img {
-      width: 100%;
-      height: 260px; 
-      object-fit: cover;
-      border-radius: 10px;
-      border: 1px solid #e5e7eb;
-      background-color: #000;
-    }
-
-    .project-item ul { padding-left: 18px; color: var(--muted-dark); margin: 0; }
-    .project-item li { margin-bottom: 8px; line-height: 1.6; font-size: 14.5px; }
-
-    /* 5th Project specific: Stacked GIFs as original */
-    .project-media-stack {
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-    }
 
     /* ---------- EXPERIENCE ---------- */
     .experience-grid {
@@ -147,44 +109,65 @@
       border: 1px solid var(--border);
       box-shadow: 0 8px 20px rgba(0,0,0,0.06);
     }
+
     .experience-card img { max-width: 120px; max-height: 50px; object-fit: contain; }
 
-    /* ---------- LAB SECTION (KEPT AS IS) ---------- */
-    .lab-grid {
+    /* ---------- PROJECT & LAB GRID (BOXED) ---------- */
+    .grid-layout {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
+      grid-template-columns: 1fr 1fr;
       gap: 32px;
       margin-top: 40px;
     }
 
-    .lab-item {
+    .box-item {
       background: #ffffff;
       border: 1px solid #e5e7eb;
       border-radius: 12px;
-      padding: 14px;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.03);
     }
 
-    .lab-item h4 { margin: 0 0 12px; font-size: 17px; text-align: center; }
+    .box-item h3, .box-item h4 {
+      margin: 0 0 15px 0;
+      font-size: 18px;
+      color: #0f172a;
+      text-align: center;
+    }
 
-    .lab-item img {
+    .box-item img {
       width: 100%;
-      height: 140px; /* Smaller as requested for lab */
+      height: 260px; /* Original project height */
       object-fit: cover;
       border-radius: 8px;
-      margin-bottom: 10px;
+      margin-bottom: 15px;
+      background: #000;
     }
+
+    /* Lab specific height adjustment (2cm) */
+    .lab-box img {
+      height: 2cm !important;
+    }
+
+    .box-item ul { padding-left: 18px; margin: 0; color: #475569; font-size: 14.5px; }
+    .box-item li { margin-bottom: 8px; line-height: 1.5; }
+
+    /* Project 5 specific stack */
+    .media-stack { display: flex; flex-direction: column; gap: 10px; margin-bottom: 15px; }
+    .media-stack img { margin-bottom: 0; height: 200px; }
 
     /* ---------- MOBILE ---------- */
     @media (max-width: 1100px) {
       .content { padding: 60px 40px; }
-      .project-grid { grid-template-columns: 1fr; }
+      .grid-layout { grid-template-columns: 1fr; }
     }
 
     @media (max-width: 900px) {
       body { flex-direction: column; }
-      .sidebar { position: relative; width: 100%; height: auto; padding: 40px 20px; }
+      .sidebar { position: relative; width: 100%; height: auto; }
       .content { margin-left: 0; width: 100%; padding: 40px 20px; }
-      .lab-grid { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -192,7 +175,7 @@
 <body>
 
 <aside class="sidebar">
-  <img src="profile1.jpg" class="profile-pic" alt="Devadas">
+  <img src="profile1.jpg" class="profile-pic">
   <h1>Devadas Vijayan Sheela</h1>
   <h3>Robotics & Autonomous Systems Engineer</h3>
   <div class="edu">
@@ -213,6 +196,8 @@
     <h2>About Me</h2>
     <p>
       Hello! I am Devadas, a Master’s student in Electromobility specializing in Artificial Intelligence, Autonomous Systems, and Sustainability, and currently working part-time as a Robotics Research Assistant at the University of Technology Nuremberg (UTN).
+      My interests lie in AI-driven robotics, autonomous navigation, and robotic manipulation.
+      I enjoy working with both software and hardware, and as a hobby, I maintain a small personal robotics lab at home. I am always open to collaboration on robotics and AI projects.
     </p>
     <a href="cv.pdf" class="resume-btn" download>Resume</a>
   </section>
@@ -222,10 +207,10 @@
   <section id="experience">
     <h2>Experience</h2>
     <div class="experience-grid">
-      <div class="experience-card"><img src="experience/utn.png" alt="UTN"></div>
-      <div class="experience-card"><img src="experience/fraunhofer.png" alt="Fraunhofer"></div>
-      <div class="experience-card"><img src="experience/faps.png" alt="FAPS FAU"></div>
-      <div class="experience-card"><img src="experience/fau.png" alt="FAU"></div>
+      <a href="https://www.utn.de/en/" target="_blank" class="experience-card"><img src="experience/utn.png" alt="UTN"></a>
+      <a href="https://www.fraunhofer.de/en.html" target="_blank" class="experience-card"><img src="experience/fraunhofer.png" alt="Fraunhofer"></a>
+      <a href="https://www.faps.fau.de/" target="_blank" class="experience-card"><img src="experience/faps.png" alt="FAPS FAU"></a>
+      <a href="https://www.fau.eu/" target="_blank" class="experience-card"><img src="experience/fau.png" alt="FAU"></a>
     </div>
   </section>
 
@@ -233,58 +218,64 @@
 
   <section id="projects">
     <h2>Projects</h2>
-    <div class="project-grid">
+    <div class="grid-layout">
 
-      <div class="project-item">
-        <img src="project/isaac_sim_nav1.gif" alt="Navigation">
+      <div class="box-item">
         <h3>Assistive Robot Simulation & Navigation</h3>
-        <p><strong>ROS2 · Isaac Sim · Nav2 Stack</strong></p>
+        <img src="project/isaac_sim_nav1.gif">
+        <p><strong>ROS2 · ZED 2i · Isaac Sim · Nav2 Stack</strong></p>
         <ul>
-          <li>Developed URDF files from CAD models.</li>
-          <li>Integrated ZED 2i depth camera and Nav2.</li>
+          <li>Developed URDF files from CAD models for NVIDIA Isaac Sim.</li>
+          <li>Integrated ZED 2i depth camera and ROS 2 Nav2.</li>
+          <li>Implemented human-centered navigation in indoor environments.</li>
         </ul>
       </div>
 
-      <div class="project-item">
-        <img src="project/bin_picking.gif" alt="3D Bin Picking">
-        <h3>Benchmarking 3D Bin-Picking</h3>
-        <p><strong>MuJoCo · Franka Emika · Evaluation</strong></p>
+      <div class="box-item">
+        <h3>Benchmarking 3D Bin-Picking Algorithms</h3>
+        <img src="project/bin_picking.gif">
+        <p><strong>MuJoCo · Franka Emika · Optimization</strong></p>
         <ul>
-          <li>Benchmarked algorithms in MuJoCo simulation.</li>
-          <li>Analyzed grasp success and performance metrics.</li>
+          <li>Benchmarked and evaluated 3D bin-picking algorithms in simulation using MuJoCo.</li>
+          <li>Conducted structured evaluation experiments with the Franka Emika robot.</li>
+          <li>Analyzed grasp success rate, robustness, and performance metrics.</li>
         </ul>
       </div>
 
-      <div class="project-item">
-        <img src="project/masterthesis.gif" alt="Object Picking">
+      <div class="box-item">
         <h3>Assistive Robot Object Picking (Ongoing)</h3>
+        <img src="project/masterthesis.gif">
         <p><strong>Isaac Lab · ROS 2 · VLA · RL</strong></p>
         <ul>
-          <li>Developing mobile manipulator in Isaac Lab.</li>
-          <li>Integrating Vision–Language–Action (VLA) models.</li>
+          <li>Developed an assistive mobile manipulator in NVIDIA Isaac Sim and Isaac Lab.</li>
+          <li>Performed teleoperation experiments to validate manipulation pipelines.</li>
+          <li>Integrate Vision–Language–Action (VLA) models with autonomous navigation.</li>
+          <li>Study sim-to-real transfer using real hardware experiments.</li>
         </ul>
       </div>
 
-      <div class="project-item">
-        <img src="project/drone.gif" alt="Drone">
-        <h3>Autonomous Drone Real-Time Detection</h3>
+      <div class="box-item">
+        <h3>Autonomous Drone Flight & Detection</h3>
+        <img src="project/drone.gif">
         <p><strong>YOLOv3 · Intel RealSense · OpenCV</strong></p>
         <ul>
-          <li>Implemented YOLOv3 object detection pipeline.</li>
-          <li>Used depth data for spatial validation.</li>
+          <li>Implemented a YOLOv3-based object detection pipeline for autonomous drones.</li>
+          <li>Used depth data from Intel RealSense for spatial validation.</li>
+          <li>Validated performance using ROS bag testing and flight experiments.</li>
         </ul>
       </div>
 
-      <div class="project-item">
-        <div class="project-media-stack">
-          <img src="project/grocessry_items.gif" alt="Segmentation 1">
-          <img src="project/object_picking.gif" alt="Segmentation 2">
-        </div>
+      <div class="box-item">
         <h3>Interactive Image Segmentation (SAM-2)</h3>
+        <div class="media-stack">
+          <img src="project/grocessry_items.gif">
+          <img src="project/object_picking.gif">
+        </div>
         <p><strong>SAM-2 · Hugging Face · Human-in-the-Loop</strong></p>
         <ul>
-          <li>Click-based segmentation pipeline for FRANKA.</li>
-          <li>Human-in-the-loop object selection for grasping.</li>
+          <li>Implemented interactive image segmentation using SAM-2 for FRANKA.</li>
+          <li>Enabled human-in-the-loop object selection for robotic grasping.</li>
+          <li>Demonstrated segmentation on multiple grocery items.</li>
         </ul>
       </div>
 
@@ -295,22 +286,23 @@
 
   <section id="home-lab">
     <h2>Home Robotics Lab & Prototyping</h2>
-    <div class="lab-grid">
-      <div class="lab-item">
+    <div class="grid-layout">
+      <div class="box-item lab-box">
         <h4>3D-Printed Mobile Robot Platform</h4>
-        <img src="lab/home_lab.gif" alt="3D Printed Mobile Robot">
+        <img src="lab/home_lab.gif">
         <ul>
           <li>Custom chassis design and 3D printing</li>
           <li>ESP32-based motor control</li>
+          <li>ROS 2 <code>/cmd_vel</code> integration</li>
         </ul>
       </div>
-
-      <div class="lab-item">
+      <div class="box-item lab-box">
         <h4>Embedded Electronics & Soldering</h4>
-        <img src="lab/me.gif" alt="Embedded Electronics">
+        <img src="lab/me.gif">
         <ul>
           <li>Motor driver wiring and power regulation</li>
           <li>Manual soldering and debugging</li>
+          <li>Sensor integration_box</li>
         </ul>
       </div>
     </div>
