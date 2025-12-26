@@ -59,40 +59,41 @@
 
 .skills-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  gap: 24px;
-  max-width: 1100px;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 28px;
   margin-top: 40px;
 }
 
 .skill-card {
   background: #ffffff;
   border: 1px solid #e5e7eb;
-  border-radius: 14px;
-  padding: 22px 16px;
+  border-radius: 16px;
+  padding: 24px 16px;
   text-align: center;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .skill-card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 10px 25px rgba(0,0,0,0.06);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.08);
 }
 
-/* SMALL icons (similar to Experience section) */
+/* 🔴 THIS IS THE IMPORTANT PART */
 .skill-card img {
-  width: 42px;
-  height: 42px;
+  width: 64px;        /* ⬅️ increase from ~32px or 40px */
+  height: 64px;       /* keep square */
   object-fit: contain;
-  margin-bottom: 12px;
+  margin-bottom: 14px;
 }
 
+/* Text under icon */
 .skill-card p {
+  font-size: 15px;
+  font-weight: 500;
+  color: #0f172a;
   margin: 0;
-  font-size: 14.5px;
-  color: #334155;
-  line-height: 1.4;
 }
+
 
 
     .profile-pic {
@@ -366,10 +367,7 @@
   <!-- GRID CONTAINER (THIS WAS MISSING) -->
   <div class="skills-grid">
 
-    <div class="skill-card">
-      <img src="icons/matlab.png" alt="MATLAB">
-      <p>MATLAB</p>
-    </div>
+   
 
     <div class="skill-card">
       <img src="icons/ros.png" alt="ROS 2">
@@ -401,10 +399,12 @@
       <p>ZED · Intel Depth Camera</p>
     </div>
 
-    <div class="skill-card">
-      <img src="icons/vscode.png" alt="VS Code">
-      <p>VS Code</p>
+
+     <div class="skill-card">
+      <img src="icons/matlab.png" alt="MATLAB">
+      <p>MATLAB</p>
     </div>
+  
 
   </div>
 </section>
