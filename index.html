@@ -47,6 +47,54 @@
       text-align: center;
     }
 
+
+
+    /* ===============================
+   SKILLS / TOOLS SECTION
+   =============================== */
+
+.skills-section {
+  margin-top: 80px;
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 24px;
+  max-width: 1100px;
+  margin-top: 40px;
+}
+
+.skill-card {
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 14px;
+  padding: 22px 16px;
+  text-align: center;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.skill-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.06);
+}
+
+/* SMALL icons (similar to Experience section) */
+.skill-card img {
+  width: 42px;
+  height: 42px;
+  object-fit: contain;
+  margin-bottom: 12px;
+}
+
+.skill-card p {
+  margin: 0;
+  font-size: 14.5px;
+  color: #334155;
+  line-height: 1.4;
+}
+
+
     .profile-pic {
       width: 120px;
       height: 120px;
@@ -305,8 +353,94 @@
         </ul>
       </div>
     </div>
+    
   </section>
+<section class="skills-section" id="skills">
+  <h2>Tools, Frameworks & Platforms</h2>
 
+  <div class="skills-grid">
+
+    <!-- Programming -->
+    <div class="skill-card">
+      <img src="icons/python.svg" alt="Python">
+      <p>Python</p>
+    </div>
+
+    <div class="skill-card">
+      <img src="icons/cpp.svg" alt="C++">
+      <p>C / C++</p>
+    </div>
+
+    <div class="skill-card">
+      <img src="icons/matlab.svg" alt="MATLAB">
+      <p>MATLAB</p>
+    </div>
+
+    <!-- Robotics & Simulation -->
+    <div class="skill-card">
+      <img src="icons/ros2.svg" alt="ROS 2">
+      <p>ROS 2</p>
+    </div>
+
+    <div class="skill-card">
+      <img src="icons/gazebo.svg" alt="Gazebo">
+      <p>Gazebo</p>
+    </div>
+
+    <div class="skill-card">
+      <img src="icons/isaac_sim.svg" alt="Isaac Sim">
+      <p>Isaac Sim</p>
+    </div>
+
+    <div class="skill-card">
+      <img src="icons/isaac_lab.svg" alt="Isaac Lab">
+      <p>Isaac Lab</p>
+    </div>
+
+    <!-- CAD & Manufacturing -->
+    <div class="skill-card">
+      <img src="icons/fusion360.svg" alt="Fusion 360">
+      <p>Autodesk Fusion 360</p>
+    </div>
+
+    <div class="skill-card">
+      <img src="icons/cad.svg" alt="CAD">
+      <p>CAD & 3D Printing</p>
+    </div>
+
+    <!-- Hardware -->
+    <div class="skill-card">
+      <img src="icons/microcontroller.svg" alt="Microcontrollers">
+      <p>Microcontrollers (ESP32)</p>
+    </div>
+
+    <div class="skill-card">
+      <img src="icons/jetson.svg" alt="NVIDIA Jetson">
+      <p>NVIDIA Jetson</p>
+    </div>
+
+    <div class="skill-card">
+      <img src="icons/zed.svg" alt="ZED Camera">
+      <p>ZED Depth Camera</p>
+    </div>
+
+    <!-- Tools -->
+    <div class="skill-card">
+      <img src="icons/vscode.svg" alt="VS Code">
+      <p>VS Code</p>
+    </div>
+
+  </div>
+</section>
+
+
+
+
+
+
+
+
+  
 </main>
 
 </body>
