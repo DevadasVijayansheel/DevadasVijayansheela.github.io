@@ -201,6 +201,17 @@
       height: 6cm !important; 
     }
 
+    .lab-intro {
+  max-width: 900px;          /* keeps it readable */
+  margin-bottom: 30px;
+  line-height: 1.7;
+  color: #4b5563;
+
+  text-align: justify;       /* 🔑 this fixes it */
+  text-justify: inter-word;  /* improves spacing */
+}
+
+
     .box-item ul { padding-left: 18px; margin: 0; color: #475569; font-size: 14.5px; }
     .box-item li { margin-bottom: 8px; line-height: 1.5; }
 
@@ -335,7 +346,7 @@
 
   <section id="home-lab">
     <h2>Home Robotics Lab & Prototyping</h2>
-    <p class="content">
+    <p class="lab-intro">
     At home, I maintain a compact yet highly functional robotics lab where I design, build,
     and validate robotic systems from the ground up. The lab is equipped with an
     <strong>Anycubic 3D printer</strong>, <strong>embedded electronics and soldering tools</strong>,
