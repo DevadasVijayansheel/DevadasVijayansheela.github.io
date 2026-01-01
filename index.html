@@ -47,6 +47,49 @@
       text-align: center;
     }
 
+    /* ===============================
+       SKILLS / TOOLS SECTION
+       =============================== */
+
+    .skills-section {
+      margin-top: 80px;
+    }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 28px;
+      margin-top: 40px;
+    }
+
+    .skill-card {
+      background: #ffffff;
+      border: 1px solid #e5e7eb;
+      border-radius: 16px;
+      padding: 24px 16px;
+      text-align: center;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .skill-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.08);
+    }
+
+    .skill-card img {
+      width: 64px;
+      height: 64px;
+      object-fit: contain;
+      margin-bottom: 14px;
+    }
+
+    .skill-card p {
+      font-size: 15px;
+      font-weight: 500;
+      color: #0f172a;
+      margin: 0;
+    }
+
     .profile-pic {
       width: 120px;
       height: 120px;
@@ -100,37 +143,7 @@
 
     .resume-btn:hover { border-color: var(--accent); color: var(--accent); }
 
-    hr {
-      margin: 70px 0;
-      border: none;
-      border-top: 1px solid var(--border);
-    }
-
-    /* ---------- EXPERIENCE ---------- */
-    .experience-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 24px;
-      margin-top: 40px;
-    }
-
-    .experience-card {
-      background: #ffffff;
-      border-radius: 14px;
-      padding: 20px;
-      height: 120px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      border: 1px solid var(--border);
-      box-shadow: 0 8px 20px rgba(0,0,0,0.06);
-    }
-
-    .experience-card img {
-      max-width: 120px;
-      max-height: 50px;
-      object-fit: contain;
-    }
+    hr { margin: 70px 0; border: none; border-top: 1px solid var(--border); }
 
     /* ---------- GRID LAYOUT ---------- */
     .grid-layout {
@@ -179,17 +192,8 @@
       text-justify: inter-word;
     }
 
-    .box-item ul {
-      padding-left: 18px;
-      margin: 0;
-      color: #475569;
-      font-size: 14.5px;
-    }
-
-    .box-item li {
-      margin-bottom: 8px;
-      line-height: 1.5;
-    }
+    .box-item ul { padding-left: 18px; margin: 0; color: #475569; font-size: 14.5px; }
+    .box-item li { margin-bottom: 8px; line-height: 1.5; }
 
     /* ---------- MOBILE ---------- */
     @media (max-width: 1100px) {
@@ -230,10 +234,7 @@
     and as a hobby, I maintain a small personal robotics lab at home. I am always open to collaboration
     on robotics and AI projects.
   </p>
-  <a href="project/CV_devadas.pdf" class="resume-btn" download>Resume</a>
 </section>
-
-
 
 
   <hr>
@@ -361,11 +362,7 @@
   
 <section class="skills-section" id="skills">
   <h2>Tools, Frameworks & Platforms</h2>
-
-  <!-- GRID CONTAINER (THIS WAS MISSING) -->
   <div class="skills-grid">
-
-   
 
     <div class="skill-card">
       <img src="icons/ros.png" alt="ROS 2">
@@ -397,30 +394,14 @@
       <p>ZED · Intel Depth Camera</p>
     </div>
 
-
-     <div class="skill-card">
+    <div class="skill-card">
       <img src="icons/matlab.png" alt="MATLAB">
       <p>MATLAB</p>
     </div>
-  
 
   </div>
 </section>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
 </main>
 
 </body>
