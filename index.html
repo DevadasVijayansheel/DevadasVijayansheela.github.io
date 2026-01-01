@@ -47,55 +47,6 @@
       text-align: center;
     }
 
-
-
-    /* ===============================
-   SKILLS / TOOLS SECTION
-   =============================== */
-
-.skills-section {
-  margin-top: 80px;
-}
-
-.skills-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-  gap: 28px;
-  margin-top: 40px;
-}
-
-.skill-card {
-  background: #ffffff;
-  border: 1px solid #e5e7eb;
-  border-radius: 16px;
-  padding: 24px 16px;
-  text-align: center;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.skill-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.08);
-}
-
-/* 🔴 THIS IS THE IMPORTANT PART */
-.skill-card img {
-  width: 64px;        /* ⬅️ increase from ~32px or 40px */
-  height: 64px;       /* keep square */
-  object-fit: contain;
-  margin-bottom: 14px;
-}
-
-/* Text under icon */
-.skill-card p {
-  font-size: 15px;
-  font-weight: 500;
-  color: #0f172a;
-  margin: 0;
-}
-
-
-
     .profile-pic {
       width: 120px;
       height: 120px;
@@ -122,7 +73,18 @@
     }
 
     h2 { font-size: 32px; margin-bottom: 25px; color: var(--text-dark); }
-    p { font-size: 16px; line-height: 1.8; color: var(--muted-dark); max-width: 750px; }
+
+    p {
+      font-size: 16px;
+      line-height: 1.8;
+      color: var(--muted-dark);
+    }
+
+    .full-width-text {
+      max-width: 100%;
+      text-align: justify;
+      text-justify: inter-word;
+    }
 
     .resume-btn {
       display: inline-block;
@@ -137,7 +99,12 @@
     }
 
     .resume-btn:hover { border-color: var(--accent); color: var(--accent); }
-    hr { margin: 70px 0; border: none; border-top: 1px solid var(--border); }
+
+    hr {
+      margin: 70px 0;
+      border: none;
+      border-top: 1px solid var(--border);
+    }
 
     /* ---------- EXPERIENCE ---------- */
     .experience-grid {
@@ -159,7 +126,11 @@
       box-shadow: 0 8px 20px rgba(0,0,0,0.06);
     }
 
-    .experience-card img { max-width: 120px; max-height: 50px; object-fit: contain; }
+    .experience-card img {
+      max-width: 120px;
+      max-height: 50px;
+      object-fit: contain;
+    }
 
     /* ---------- GRID LAYOUT ---------- */
     .grid-layout {
@@ -186,37 +157,39 @@
       text-align: center;
     }
 
-    /* Project original GIF styling */
     .box-item img {
       width: 100%;
-      height: 260px; 
+      height: 260px;
       object-fit: cover;
       border-radius: 8px;
       margin-bottom: 15px;
       background: #000;
     }
 
-    /* LAB SECTION GIF HEIGHT: 2cm + 4cm = 6cm */
     .lab-box img {
-      height: 6cm !important; 
+      height: 6cm !important;
     }
 
     .lab-intro {
-  max-width: 900px;          /* keeps it readable */
-  margin-bottom: 30px;
-  line-height: 1.7;
-  color: #4b5563;
+      max-width: 900px;
+      margin-bottom: 30px;
+      line-height: 1.7;
+      color: #4b5563;
+      text-align: justify;
+      text-justify: inter-word;
+    }
 
-  text-align: justify;       /* 🔑 this fixes it */
-  text-justify: inter-word;  /* improves spacing */
-}
+    .box-item ul {
+      padding-left: 18px;
+      margin: 0;
+      color: #475569;
+      font-size: 14.5px;
+    }
 
-
-    .box-item ul { padding-left: 18px; margin: 0; color: #475569; font-size: 14.5px; }
-    .box-item li { margin-bottom: 8px; line-height: 1.5; }
-
-    .media-stack { display: flex; flex-direction: column; gap: 10px; margin-bottom: 15px; }
-    .media-stack img { margin-bottom: 0; height: 200px; }
+    .box-item li {
+      margin-bottom: 8px;
+      line-height: 1.5;
+    }
 
     /* ---------- MOBILE ---------- */
     @media (max-width: 1100px) {
@@ -243,23 +216,25 @@
     Germany<br>
     Expected May 2026
   </div>
-  <div class="socials">
-    <a href="https://github.com/DevadasVijayansheel" target="_blank">GitHub</a>
-    <a href="https://www.linkedin.com/in/vijayan-sheela" target="_blank">LinkedIn</a>
-  </div>
 </aside>
 
 <main class="content">
 
-  <section id="about">
-    <h2>About Me</h2>
-    <p>
-      Hello! I am Devadas, a Master’s student in Electromobility specializing in Artificial Intelligence, Autonomous Systems, and Sustainability, and currently working part-time as a Robotics Research Assistant at the University of Technology Nuremberg (UTN).
-      My interests lie in AI-driven robotics, autonomous navigation, and robotic manipulation.
-      I enjoy working with both software and hardware, and as a hobby, I maintain a small personal robotics lab at home. I am always open to collaboration on robotics and AI projects.
-    </p>
-<a href="project/CV_devadas.pdf" class="resume-btn" download>Resume</a>
-  </section>
+<section id="about">
+  <h2>About Me</h2>
+  <p class="full-width-text">
+    Hello! I am Devadas, a Master’s student in Electromobility specializing in Artificial Intelligence,
+    Autonomous Systems, and Sustainability, and currently working part-time as a Robotics Research
+    Assistant at the University of Technology Nuremberg (UTN). My interests lie in AI-driven robotics,
+    autonomous navigation, and robotic manipulation. I enjoy working with both software and hardware,
+    and as a hobby, I maintain a small personal robotics lab at home. I am always open to collaboration
+    on robotics and AI projects.
+  </p>
+  <a href="project/CV_devadas.pdf" class="resume-btn" download>Resume</a>
+</section>
+
+
+
 
   <hr>
 
@@ -346,7 +321,7 @@
 
   <section id="home-lab">
     <h2>Home Robotics Lab & Prototyping</h2>
-    <p class="lab-intro">
+    <p class="full-width-text">
     At home, I maintain a compact yet highly functional robotics lab where I design, build,
     and validate robotic systems from the ground up. The lab is equipped with an
     <strong>Anycubic 3D printer</strong>, <strong>embedded electronics and soldering tools</strong>,
